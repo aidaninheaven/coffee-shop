@@ -1,0 +1,52 @@
+
+queue = []
+
+def takeOrder():
+        
+    orderInput = input("Please input the name for the order: ")
+    print(f"Customer's name: {orderInput} ")
+
+    queue.append(orderInput)
+
+def printQueue():
+    for i in range(len(queue)):
+        print(queue[i], end=", ")
+        print("\n")
+        
+def serveOrder():
+    
+    print(f"Customer {queue[0]} has been served.")
+    
+    queue.pop(0)
+    
+
+def userChoice():
+    while True:
+        
+        print("COFFEE SHOP INCREMENTAL")
+        print("What would you like to do?\n")
+
+        print("1. Take a customer's order")
+        print("2. Serve a customer")
+        print("3. View the line of customers")
+        print("4. Exit")
+        
+        userInput = input("\nChoose an option: ")
+        
+        if userInput == "1":
+            takeOrder()
+        
+        elif userInput == "2":
+            serveOrder()
+        
+        elif userInput == "3":
+            printQueue()
+            
+        elif userInput == "4":
+            print("Exiting program.")
+            break  
+        
+        else:
+            print("Invalid option. Please select a valid option.")
+            
+userChoice()
