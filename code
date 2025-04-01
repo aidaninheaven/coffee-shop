@@ -2,33 +2,30 @@ print("AIDAN'S TAVERN")
 
 queue = []
 
-def takeOrder():
+def takeOrder(): #function for taking a customers order
         
     orderInput = input("Please input the name for the order: ")
     print(f"Customer's name: {orderInput}\n ")
 
-    queue.append(orderInput)
+    queue.append(orderInput) #appends the order to the queue
 
-def printQueue():
+def printQueue(): #function for printing out the queue
     for i in range(len(queue)):
         print(queue[i], end=", ")
     print("\n")
         
-def serveOrder():
+def serveOrder(): #function for serving the first customer in the queue
     
-    if len(queue) == 0:
+    if len(queue) == 0: #conditional for if there is no one in the queue
         print("No customers are available to serve.\n")
         return
     
     print(f"Customer {queue[0]} has been served.\n")
     
-    queue.pop(0)
-    
-
+    queue.pop(0) #removes the first customer in the queue
 
 def userChoice():
     while True:
-        
         
         print("What would you like to do?\n")
 
