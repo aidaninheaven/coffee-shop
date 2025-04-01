@@ -1,29 +1,35 @@
+print("AIDAN'S TAVERN")
 
 queue = []
 
 def takeOrder():
         
     orderInput = input("Please input the name for the order: ")
-    print(f"Customer's name: {orderInput} ")
+    print(f"Customer's name: {orderInput}\n ")
 
     queue.append(orderInput)
 
 def printQueue():
     for i in range(len(queue)):
         print(queue[i], end=", ")
-        print("\n")
+    print("\n")
         
 def serveOrder():
     
-    print(f"Customer {queue[0]} has been served.")
+    if len(queue) == 0:
+        print("No customers are available to serve.\n")
+        return
+    
+    print(f"Customer {queue[0]} has been served.\n")
     
     queue.pop(0)
     
 
+
 def userChoice():
     while True:
         
-        print("COFFEE SHOP INCREMENTAL")
+        
         print("What would you like to do?\n")
 
         print("1. Take a customer's order")
